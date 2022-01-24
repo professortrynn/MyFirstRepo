@@ -10,11 +10,13 @@ public class BallController : MonoBehaviour
     public int randomNumber;
     public float ballForce;
     public Vector3 startPosition;
+    public GameMaster gameMaster;
 
     // Start is called before the first frame update
     void Start()
     {
         ballRigidbody = GetComponent<Rigidbody2D>();
+        gameMaster.GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class BallController : MonoBehaviour
         if(other.gameObject.tag == "DefeatZone")
         {
             ballRigidbody.velocity = Vector3.zero;
+            gameMaster.playerLives = gameMaster.playerLives--;
             transform.position = startPosition;
             ballLaunched = false;
         }
