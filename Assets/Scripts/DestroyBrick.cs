@@ -6,6 +6,8 @@ public class DestroyBrick : MonoBehaviour
 {
     public int numberOfHits = 0;
     public int maxHits;
+
+
     public SpriteRenderer brickSprite;
     public float brickValue;
 
